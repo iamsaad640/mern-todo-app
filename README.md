@@ -2,9 +2,50 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+--- Folder Structure ---
+.env
+[client]
+    ├── package-lock.json
+    ├── package.json
+    ├── [public]
+        ├── favicon.ico
+        ├── index.html
+        ├── logo192.png
+        ├── logo512.png
+        ├── manifest.json
+        └── robots.txt
+    ├── README.md
+    └── [src]
+        ├── App.css
+        ├── App.js
+        ├── App.test.js
+        ├── [components]
+            ├── Todo.js
+            └── TodoList.js
+        ├── index.css
+        ├── index.js
+        ├── logo.svg
+        ├── reportWebVitals.js
+        ├── [services]
+        └── setupTests.js
+[config]
+[controllers]
+    └── todoController.js
+[docs]
+    └── .project_structure_filter
+[models]
+    └── Todo.js
+nodemon.json
+package-lock.json
+package.json
+[routes]
+    └── todoRoutes.js
+server.js
+
+--- File Contents ---
+
 
 ### `npm start`
 
