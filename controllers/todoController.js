@@ -20,6 +20,13 @@ exports.toggleComplete = async (req, res) => {
   res.json(todo);
 };
 
+exports.editTodo = async (req, res) => {
+  const todo = await Todo.findById(req.params.id);
+  todo.text = req.body.text;
+  await todo.save();
+  res.json(todo);
+};
+
 exports.deleteTodo = async (req, res) => {
   await Todo.findByIdAndDelete(req.params.id);
   res.json({ message: 'Todo deleted' });

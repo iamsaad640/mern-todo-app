@@ -29,6 +29,16 @@ const TodoList = () => {
     });
   };
 
+  const editTodo = (id, newText) => {
+    axios.put(`http://localhost:5000/todos/${id}/edit`, {text:newText}).then((response) => {
+      setTodos(
+        todos.map((todo) =>
+          todo._id === id ? { ...todo, text: newText } : todo
+        )
+      );
+    });
+  };
+
   const deleteTodo = (id) => {
     axios.delete(`http://localhost:5000/todos/${id}`).then(() => {
       setTodos(todos.filter((todo) => todo._id !== id));
@@ -49,6 +59,7 @@ const TodoList = () => {
           todo={todo}
           toggleComplete={toggleComplete}
           deleteTodo={deleteTodo}
+          editTodo={editTodo}
         />
       ))}
     </div>
